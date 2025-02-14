@@ -1,0 +1,29 @@
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+# Weather entities
+rest:
+  - resource: https://tehopirtti.net/forecast.json?latitude=65.0166&longitude=25.4666&source=met
+    scan_interval: 600
+    sensor:
+    - name: saa_oulu_temperature
+      value_template: "{{ (value_json.data | selectattr('timestamp', 'equalto', (now().timestamp() | int // 3600 * 3600)) | list | first).temperature }}"
+      unit_of_measurement: "°C"
+      state_class: measurement
+      device_class: temperature
+    - name: saa_oulu_pressure
+      value_template: "{{ (value_json.data | selectattr('timestamp', 'equalto', (now().timestamp() | int // 3600 * 3600)) | list | first).pressure }}"
+      unit_of_measurement: "hPa"
+      state_class: measurement
+      device_class: pressure
+    - name: saa_oulu_humidity
+      value_template: "{{ (value_json.data | selectattr('timestamp', 'equalto', (now().timestamp() | int // 3600 * 3600)) | list | first).humidity }}"
+      unit_of_measurement: "%"
+      state_class: measurement
+      device_class: humidity
+    - name: saa_oulu_wind_speed
+      value_template: "{{ (value_json.data | selectattr('timestamp', 'equalto', (now().timestamp() | int // 3600 * 3600)) | list | first).wind }}"
+      unit_of_measurement: "m/s"
+      state_class: measurement
+      device_class: wind_speed

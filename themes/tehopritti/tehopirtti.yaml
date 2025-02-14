@@ -1,0 +1,53 @@
+tehopirtti:
+    modes:
+        dark:
+        
+            primary-text-color: rgba(255, 255, 255, 0.9)
+            secondary-text-color: rgba(173, 181, 189, 1)
+        
+            background-color: rgba(43, 42, 51, 1)
+            primary-background-color: rgba(43, 42, 51, 1)
+            secondary-background-color: var(--primary-background-color)
+            background-image: "center top / cover no-repeat url('/local/background.png') fixed"
+            lovelace-background: var(--background-image)
+            
+            sidebar-background-color: rgba(33, 37, 41, 1)
+            sidebar-icon-color: rgba(186, 186, 187, 1)
+            sidebar-text-color: rgba(186, 186, 187, 1)
+            sidebar-selected-background-color: rgba(38, 42, 46, 1)
+            sidebar-selected-icon-color: rgba(173, 181, 189)
+            sidebar-selected-text-color: rgba(173, 181, 189)
+            
+            app-header-background-color: rgba(33, 37, 41, 1)
+            app-header-icon-color: rgba(186, 186, 187, 1)
+            app-header-text-color: rgba(186, 186, 187, 1)
+            app-header-selection-bar-color: rgba(38, 42, 46, 1)
+            app-header-selection-color: rgba(173, 181, 189)
+        
+            ha-card-border-width: 1px
+            ha-card-border-color: rgba(66, 70, 73, 1)
+            ha-card-border-radius: 6px
+            ha-card-box-shadow: 0 0 18px 4px rgba(0, 0, 0, 0.6)
+            ha-card-background: rgba(33, 37, 41, 0.9)
+            card-background-color: rgba(33, 37, 41)
+            
+            label-badge-background-color: var(--ha-card-background)
+            label-badge-text-color: var(--primary-text-color)
+            label-badge-red: var(--ha-card-border-color)
+            label-badge-blue: var(--ha-card-border-color)
+            
+            weather-icon-clear-night: url("/local/svg/clear-night.svg")
+            weather-icon-cloudy: url("/local/svg/cloudy.svg")
+            weather-icon-fog: url("/local/svg/fog.svg")
+            weather-icon-hail: url("/local/svg/hail.svg")
+            weather-icon-lightning-rainy: url("/local/svg/lightning-rainy.svg")
+            weather-icon-lightning: url("/local/svg/lightning.svg")
+            weather-icon-partlycloudy: url("/local/svg/partlycloudy.svg")
+            weather-icon-pouring: url("/local/svg/pouring.svg")
+            weather-icon-rainy: url("/local/svg/rainy.svg")
+            weather-icon-snowy-rainy: url("/local/svg/snowy-rainy.svg")
+            weather-icon-snowy: url("/local/svg/snowy.svg")
+            weather-icon-sunny: url("/local/svg/sunny.svg")
+            weather-icon-windy-variant: url("/local/svg/windy-variant.svg")
+            weather-icon-windy: url("/local/svg/windy.svg")
+            weather-icon-exceptional: url("/local/svg/exceptional.svg")
