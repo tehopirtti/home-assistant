@@ -9,11 +9,13 @@
         "name": "tehopirtti",
         "url": "https://tehopirtti.net"
     },
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "home-assistant.auto-refresh@tehopirtti.app"
+        }
+    },
     "icons": {
-        "16": "icon.png",
-        "32": "icon.png",
-        "48": "icon.png",
-        "128": "icon.png"
+        "91": "icon.png"
     },
     "permissions": [
         "scripting",
