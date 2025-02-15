@@ -1,3 +1,23 @@
+let debug = false;
+
+findLovelace((shadowRoot) => {
+
+    if (debug) console.log("Waiting for updates...");
+
+    findUpdateButton(shadowRoot);
+
+    const observer = new MutationObserver(() => {
+
+        if (debug) console.log("Update detected");
+
+        findUpdateButton(shadowRoot);
+
+    });
+
+    observer.observe(shadowRoot, { childList: true, subtree: true });
+
+});
+
 function findLovelace(callback) {
 
     let intervalId = setInterval(() => {
@@ -6,7 +26,7 @@ function findLovelace(callback) {
 
         if (home_assistant?.shadowRoot) {
 
-            console.log("Lovelace found");
+            if (debug) console.log("Lovelace found");
 
             clearInterval(intervalId);
 
@@ -28,7 +48,7 @@ function findUpdateButton(shadowRoot) {
 
     }
 
-    console.log("Searching update button...");
+    if (debug) console.log("Searching update button...");
 
     setTimeout(function() {
 
@@ -36,7 +56,7 @@ function findUpdateButton(shadowRoot) {
 
         if (ha_toast?.shadowRoot) {
 
-            console.log("Toast detected");
+            if (debug) console.log("Toast detected");
 
             setTimeout(function() {
 
@@ -44,7 +64,7 @@ function findUpdateButton(shadowRoot) {
 
                 if (ha_button) {
 
-                    console.log("Button detected");
+                    if (debug) console.log("Button detected");
 
                     if ([
                         "Opdateer", // Afrikaans
@@ -121,21 +141,3 @@ function findUpdateButton(shadowRoot) {
     }, 1000);
     
 }
-
-findLovelace((shadowRoot) => {
-
-    console.log("Waiting for updates...");
-
-    findUpdateButton(shadowRoot);
-
-    const observer = new MutationObserver(() => {
-
-        console.log("Update detected");
-
-        findUpdateButton(shadowRoot);
-
-    });
-
-    observer.observe(shadowRoot, { childList: true, subtree: true });
-
-});
