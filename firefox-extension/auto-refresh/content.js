@@ -51,6 +51,7 @@ function findUpdateButton(shadowRoot) {
                         location.reload();
 
                     }
+                    
                 }
 
             }, 1000);
