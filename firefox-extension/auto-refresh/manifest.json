@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Home Assistant Lovelace auto refresh",
+    "version": "1.0",
+    "description": "Reload current view when update button appears.",
+    "author": "tehopirtti",
+    "homepage_url": "https://github.com/tehopirtti/home-assistant/firefox-extension/auto-refresh",
+    "developer": {
+        "name": "tehopirtti",
+        "url": "https://tehopirtti.net"
+    },
+    "permissions": [
+        "scripting",
+        "activeTab",
+        "tabs"
+    ],
+    "host_permissions": ["<all_urls>"],
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"],
+            "run_at": "document_end"
+        }
+    ]
+}
